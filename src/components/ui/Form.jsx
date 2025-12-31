@@ -1,14 +1,28 @@
 import InputText from './InputText';
 import Button from './Button';
 
-export default function Form({ onSubmit }) {
+export default function Form({ onSubmit, onClose }) {
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(event.target);
+        const taskDescription = formData.get('taskDescription');
+        onSubmit(taskDescription);
+
+        event.target.reset();
+
+        // Close the modal after submitting the form
+        if (onClose) {
+            onClose();
+        }
+    };
+    
     return (
         <form 
             className="flex flex-col gap-4"
-            onSubmit={onSubmit}
+            onSubmit={handleSubmit}
         >
-            <InputText 
-                type="text" 
+            <InputText  
                 name="taskDescription"  
                 required 
             />

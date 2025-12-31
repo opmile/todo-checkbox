@@ -2,6 +2,7 @@ import Container from "./components/Container"
 import Toolbar from "./components/Toolbar"
 import { useState } from "react"
 import Modal from "./components/ui/Modal";
+import Form from "./components/ui/Form";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -19,7 +20,9 @@ function App() {
           isOpen={toggleModal}
           onClose={toggleModal}
           title="Create New Task"
-        />
+        >
+          <Form onSubmit={toggleModal}/>
+        </Modal>
       )}
     </Container>
     </>

@@ -4,7 +4,7 @@ import { useState } from "react"
 import Modal from "./components/ui/Modal";
 import Form from "./components/ui/Form";
 import Section from "./components/Section";
-import VerticalDivider from "./components/ui/VerticalDvider";
+import Divider from "./components/ui/Divider";
 import SectionColumn from "./components/ui/SectionColumn";
 
 function App() {
@@ -65,7 +65,7 @@ function App() {
           onToggleTask={onToggleTask}
         />
 
-        <VerticalDivider/>
+        <Divider/>
 
         <SectionColumn
           title="Completed"

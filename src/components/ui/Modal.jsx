@@ -23,9 +23,7 @@ export default function Modal({ children, isOpen, onClose, title }) {
                         {title}    
                     </ModalTitle>
 
-                    <div className="flex flex-col gap-4">
-                        {children}
-                    </div>
+                    {children}
                 </div>
 
             </dialog>
